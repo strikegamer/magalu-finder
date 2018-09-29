@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="header clearfix">
+      <nav>
+
+      </nav>
+      <nav>
+        <ul class="nav nav-pills float-right">
+          <li class="nav-item">
+            <a routerLink="/" class="nav-link active">Home </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/storelist" class="nav-link active">Lista de Lojas </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/storeadd" class="nav-link active">Criar nova loja </a>
+          </li>
+          <li class="nav-item">
+            <a data-toggle="modal" data-target="#exampleModalLong" class="nav-link active" href="#">Produtos <span
+                class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a data-toggle="modal" data-target="#exampleModalLong" class="nav-link active" href="#">Gerenciar
+              Administradores <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </nav>
+      <h3 class="text-muted">Gerenciador de Lojas e Produtos Magalu-Finder</h3>
+    </div>
+    <router-outlet></router-outlet>
+
+  </div>
+</body>
+
+
+</html>
