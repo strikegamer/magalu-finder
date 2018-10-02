@@ -5,9 +5,9 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { StoreAddComponent } from './storeadd/storeadd.component';
-import { CommonService } from './common/common.service';
-import { StoreListComponent } from './storelist/storelist.component'
+import { StoreAddComponent } from 'pages/storeadd/storeadd.component';
+import { StoreService } from 'providers/store/store.service';
+import { StoreListComponent } from 'pages/storelist/storelist.component'
 
 const routes: Routes = [
   { path: 'storeadd', component: StoreAddComponent },
@@ -29,7 +29,7 @@ const routes: Routes = [
   exports: [
     RouterModule
   ],
-  providers: [CommonService],
+  providers: [StoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

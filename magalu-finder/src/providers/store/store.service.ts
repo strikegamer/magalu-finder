@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
-import { IStore } from '../storeadd/store.model';
+import { IStore } from 'models/store.model';
 import { Subject } from 'rxjs/Subject';
 import { Http } from '@angular/http';
-import {Observable} from 'rxjs';
 
 @Injectable()
-export class CommonService {
+export class StoreService {
 	public storeList: IStore[]
 	public add_subject=new Subject<String>()
 

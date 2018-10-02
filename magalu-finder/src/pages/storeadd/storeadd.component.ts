@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IStore } from './store.model'
-import { CommonService } from '../common/common.service'
+import { IStore } from 'models/store.model'
+import { StoreService } from 'providers/store/store.service'
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,13 +14,13 @@ export class StoreAddComponent implements OnInit {
     private storeItem: IStore;
 
 
-    constructor(private commonService: CommonService, private router: Router) {
+    constructor(private storeService: StoreService, private router: Router) {
         this.storeItem = {} as IStore;
     }
 
     addStore() {
         console.log(this.storeItem);
-        this.commonService.addStore(this.storeItem).subscribe(res => {
+        this.storeService.addStore(this.storeItem).subscribe(res => {
             this.router.navigate(['storelist']);
         })        
     }

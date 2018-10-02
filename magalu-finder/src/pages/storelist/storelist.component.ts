@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonService } from '../common/common.service'
-import { IStore } from '../storeadd/store.model'
+import { StoreService } from 'providers/store/store.service'
+import { IStore } from 'models/store.model'
 
 @Component({
   selector: 'store-list',
@@ -11,7 +11,7 @@ export class StoreListComponent implements OnInit {
 
 	private storeList:IStore[];
 
-	constructor(private commonService:CommonService){
+	constructor(private storeService:StoreService){
 
 	}
 
@@ -20,7 +20,7 @@ export class StoreListComponent implements OnInit {
 	}
 
 	getAllStores(){
-		this.commonService.getStores().subscribe(res =>{
+		this.storeService.getStores().subscribe(res =>{
 			this.storeList  = [];
 			res.json().data.map(e => {
 				this.storeList.push(e);
@@ -29,7 +29,7 @@ export class StoreListComponent implements OnInit {
 	}
 
 	deleteStore(storeId){
-		this.commonService.deleteStore(storeId).subscribe(res =>{
+		this.storeService.deleteStore(storeId).subscribe(res =>{
 			console.log(storeId + " deleted");
 			this.getAllStores();	
 		})
