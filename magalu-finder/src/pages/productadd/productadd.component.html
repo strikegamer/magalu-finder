@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<body>
+
+  <div class="panel-group">
+
+    <div class="panel-heading">
+      <h5 class="title" id="exampleModalLongTitle">Adicionar novo produto</h5>
+    </div>
+    <div class="panel-body">
+        <div class="form-group">
+           
+            <select class='form-control' required [(ngModel)]='storeSelected' (ngModelChange)='onStoreSelected($event)'>
+                <option [ngValue]="null" selected>Selecione uma das filiais</option>
+                <option *ngFor='let store of storeList' [value]="store._id">{{store.Name}}</option>                
+            </select>
+          </div>
+      <div class="form-group">
+        <input class="form-control" [(ngModel)]="productItem.Code" id="ex1" type="number" placeholder="Código do Produto">
+      </div>
+      <div class="form-group">
+        <input class="form-control" [(ngModel)]="productItem.Name" id="ex2" type="text" placeholder="Nome do Produto">
+      </div>
+      <div class="form-group">
+        <input class="form-control" [(ngModel)]="productItem.Price" id="ex3" type="number" placeholder="Valor do Produto">
+      </div>
+    </div>
+    <div class="mfooter">
+      <button type="button" class="btn btn-secondary"  routerLink="/productlist">Voltar para a lista de lojas</button>
+      <button type="button" (click)="addProduct()" class="btn btn-primary">Salvar</button>
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -12,19 +12,19 @@
   <table class="table table-striped table-bordered">
       
         <tr>
-          <th scope="col">Código</th>
+          <th scope="col">Filial</th>
+          <th scope="col">Codigo</th>
           <th scope="col">Nome</th>
-          <th scope="col">CEP</th>
-          <th scope="col">Coordenadas (automatico pelo cep)</th>
+          <th scope="col">Valor</th>
           <th scope="col">Excluir</th>
         </tr>    
      
-        <tr *ngFor="let item of storeList">          
+        <tr *ngFor="let item of productList">  
+          <td>{{item.StoreName}}</td>        
           <td>{{item.Code}}</td>
           <td>{{item.Name}}</td>
-          <td>{{item.Cep}}</td>
-          <td>{{item.Lat}},{{item.Lng}}</td>
-          <td><button type="button" class="btn btn-danger" (click)="deleteStore(item._id)">Excluir Loja</button></td>
+          <td>{{item.Price}}</td>          
+          <td><button type="button" class="btn btn-danger" (click)="deleteProduct(item._id)">Excluir Produto</button></td>
         </tr>
      
     </table>

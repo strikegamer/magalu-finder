@@ -16,6 +16,10 @@ export class StoreService {
 		return this.http.get('http://localhost:3000/api/stores',{})
 	}
 
+	storeName(storeId){
+		return this.http.get('http://localhost:3000/api/storename?storeid=' + storeId,{})
+	}
+
 	addStore(item){
 		return this.http.post('http://localhost:3000/api/addstore',{
 			storeItem : item
@@ -28,7 +32,8 @@ export class StoreService {
 		})
 	}
 
-	
-
+	getLocation(cep){
+		return this.http.get('https://maps.google.com/maps/api/geocode/json?address=' + cep + '&sensor=false&key=AIzaSyBrOuhSnF0bZESrNm74OXzZYZef1l7v76A',{})
+ }
 	
 }

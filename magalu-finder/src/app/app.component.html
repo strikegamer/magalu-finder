@@ -17,7 +17,7 @@
       <nav>
         <ul class="nav nav-pills float-right">
           <li class="nav-item">
-            <a routerLink="/" class="nav-link active">Home </a>
+            <a routerLink="/productfindnear" class="nav-link active">Buscar Produtos Próximos </a>
           </li>
           <li class="nav-item">
             <a routerLink="/storelist" class="nav-link active">Lista de Lojas </a>
@@ -26,16 +26,14 @@
             <a routerLink="/storeadd" class="nav-link active">Criar nova loja </a>
           </li>
           <li class="nav-item">
-            <a data-toggle="modal" data-target="#exampleModalLong" class="nav-link active" href="#">Produtos <span
-                class="sr-only">(current)</span></a>
+              <a routerLink="/productadd" class="nav-link active">Criar novo produto na loja</a>
           </li>
           <li class="nav-item">
-            <a data-toggle="modal" data-target="#exampleModalLong" class="nav-link active" href="#">Gerenciar
-              Administradores <span class="sr-only">(current)</span></a>
-          </li>
+              <a routerLink="/productlist" class="nav-link active">Lista de Produtos</a>
+          </li> 
         </ul>
       </nav>
-      <h3 class="text-muted">Gerenciador de Lojas e Produtos Magalu-Finder</h3>
+      <h3 class="text-muted">Magalu-Finder</h3>
     </div>
     <router-outlet></router-outlet>
 
